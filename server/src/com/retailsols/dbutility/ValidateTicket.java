@@ -59,7 +59,8 @@ public class ValidateTicket {
             			if(Integer.parseInt(flag)>0){
             				b=false;
             			}
-            			else if(td.equals(st) && td.equals(end)){
+//            			else if(td.equals(st) && td.equals(end)){
+            			else if((st.equals(td) || ss.after(start_date)) && (end.equals(td) || ss.before(end_date))){
             				// Ticket is today's ticket
             				 PreparedStatement ps1=con.prepareStatement(QueryConstants.updateFlag);
                              ps1.setString(1, ticket_id);
